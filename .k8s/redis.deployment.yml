@@ -15,7 +15,7 @@ spec:
         app: redis
     spec:
       containers:
-      - image: codewithdan/redis
+      - image: worldoflinux/redis
         imagePullPolicy: IfNotPresent
         name: redis
         ports:

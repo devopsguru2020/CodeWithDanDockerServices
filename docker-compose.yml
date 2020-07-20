@@ -37,26 +37,26 @@ services:
         - "80:80"
         - "443:443"
       networks:
-        - codewithdan-network
+        - worldoflinux-network
         
     node:
-      container_name: node-codewithdan
-      image: ${DOCKER_ACCT}/node-codewithdan
+      container_name: node-worldoflinux
+      image: ${DOCKER_ACCT}/node-worldoflinux
       build: 
         context: .
-        dockerfile: .docker/node-codewithdan.${APP_ENV}.dockerfile
+        dockerfile: .docker/node-worldoflinux.${APP_ENV}.dockerfile
       ports:
       - "8080"
       volumes:
-        - .:/var/www/codewithdan
-      working_dir: /var/www/codewithdan
+        - .:/var/www/worldoflinux
+      working_dir: /var/www/worldoflinux
       env_file:
         - ./.docker/env/app.${APP_ENV}.env
       depends_on:
         - mongo
         - redis
       networks:
-        - codewithdan-network
+        - worldoflinux-network
       
     # Removing these for those wanting to run Kubernetes as well (since replica sets would scale pods with containers)
     # node2:
@@ -108,7 +108,7 @@ services:
       env_file:
         - ./.docker/env/mongo.${APP_ENV}.env
       networks:
-        - codewithdan-network
+        - worldoflinux-network
         
     redis:
       container_name: redis
@@ -119,21 +119,21 @@ services:
       ports:
         - "6379"
       networks:
-        - codewithdan-network
+        - worldoflinux-network
 
-    # cadvisor:
-    #   container_name: cadvisor
-    #   image: google/cadvisor
-    #   volumes:
-    #     - /:/rootfs:ro
-    #     - /var/run:/var/run:rw
-    #     - /sys:/sys:ro
-    #     - /var/lib/docker/:/var/lib/docker:ro
-    #   ports:
-    #     - "8080:8080"
-    #   networks:
-    #     - codewithdan-network
+    cadvisor:
+      container_name: cadvisor
+      image: google/cadvisor
+      volumes:
+        - /:/rootfs:ro
+        - /var/run:/var/run:rw
+        - /sys:/sys:ro
+        - /var/lib/docker/:/var/lib/docker:ro
+      ports:
+        - "8080:8080"
+      networks:
+        - worldoflinux-network
         
 networks:
-    codewithdan-network:
+    worldoflinux-network:
       driver: bridge

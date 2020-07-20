@@ -32,7 +32,7 @@ spec:
             configMapKeyRef:
               key: NODE_ENV
               name: node-env
-        image: codewithdan/node-codewithdan
+        image: worldoflinux/node-codewithdan
         imagePullPolicy: IfNotPresent
         name: node-codewithdan
         ports:

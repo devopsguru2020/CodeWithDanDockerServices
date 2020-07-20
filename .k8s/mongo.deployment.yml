@@ -133,7 +133,7 @@ spec:
             configMapKeyRef:
               key: MONGODB_USERNAME
               name: mongo-env
-        image: codewithdan/mongo
+        image: worldoflinux/mongo
         imagePullPolicy: IfNotPresent
         name: mongo
         ports:

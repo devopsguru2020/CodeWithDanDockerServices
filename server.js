@@ -13,6 +13,7 @@ const express               = require('express'),
     csurf                   = require('csurf'),
     favicon                 = require('serve-favicon'),
     merge                   = require('merge'),
+    path                    = require('path'), 
 
 //Local Modules 
 
@@ -39,6 +40,7 @@ const hbs = exphbs.create({
 });
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
+app.set('views' , path.join(__dirname, 'views'));
 //Add custom handlebars template helper functionality
 hbsLayouts.register(hbs.handlebars, {});
 
@@ -131,6 +133,8 @@ router.load(app, {
 
    //Root directory where your server is running
    rootDirectory: __dirname,
+
+  // rootDirectory: '/',
    
    //Do you want the created routes to be shown in the console?
    logRoutes: true

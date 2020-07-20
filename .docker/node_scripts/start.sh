@@ -6,4 +6,4 @@ fi
 
 cd /var/www/codewithdan
 
-pm2 start -x server.js --name="codewithdan" --no-daemon --watch
+pm2 start -x server.js --name="worldoflinux" --no-daemon --watch

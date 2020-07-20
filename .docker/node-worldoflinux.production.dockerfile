@@ -1,16 +1,23 @@
 FROM node:alpine
 
-LABEL author="Dan Wahlin"
+LABEL author="Popescu Catalin"
 
-WORKDIR /var/www/codewithdan
+WORKDIR /var/www/worldoflinux
 
+COPY ./package.json .
+COPY ./package-lock.json .
+
+ENV NODE_ENV production
 RUN npm install -g pm2@latest
+RUN npm install
+
+COPY    . .
 
 RUN mkdir -p /var/log/pm2
 
 EXPOSE 		8080
 
-ENTRYPOINT ["pm2", "start", "server.js","--name","codewithdan","--log","/var/log/pm2/pm2.log","--watch","--no-daemon"]
+ENTRYPOINT ["pm2", "start", "server.js","--name","worldoflinux","--log","/var/log/pm2/pm2.log","--watch","--no-daemon"]
 
 
 # To build:
