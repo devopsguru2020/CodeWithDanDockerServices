@@ -23,34 +23,16 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
 <body>
-    <header class="navbar navbar-default navbar-fixed-top" role="navigation">
-         <div class="top-bar">
-            <div class="container-fluid">
-                <div class="wrapper"></div>
-            </div>
-        </div>
+    <header  class="navbar navbar-default navbar-fixed-top" role="navigation">
+         
         <div class="container-fluid">
             <nav class="wrapper">
                 <div class="row">
-                    <div class="col-lg-3 col-md-3 col-xs-12">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <div>
-                                <a class="navbar-brand" href="/">
-                                    <img src="/img/codeWithDanLogo.png" alt="Code with Dan Logo" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-lg-9 col-md-9 col-xs-12">
                         <div class="collapse navbar-collapse" id="menu-collapse">
                             <div class="position-nav-links">
-                                <div class="row top-navbar">
+                              <!--  <div class="row top-navbar">
                                     <div class="col-md-12">
                                         <ul class="nav navbar-nav navbar-right">
                                             {{#if isAuthenticated}}
@@ -77,23 +59,22 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="row bottom-navbar">
                                     <div class="col-md-12">
                                         <ul class="nav navbar-nav navbar-right">
                                             {{#each productTypes}}
                                                 <li><a href="/products/{{title}}">{{linkTitle}}</a></li>
                                             {{/each}}
-                                            
-                                            <li><a href="//blog.codewithdan.com">Blog</a></li>
-                                            <li>
-                                                <div class="search-container">
+                                            <li><a href="/blogposts">Blog</a></li>
+                                            <!--<li>ß
+                                               <!-- <div class="search-container">
                                                     <input type="text" placeholder="Search" id="searchText" class="search-box" value="{{searchtext}}" />
                                                     <button type="submit" id="searchButton" class="btn btn-default search-button">
                                                         <span class="fa fa-search"></span>
                                                     </button>
                                                 </div>
-                                            </li>
+                                            </li>-->
                                         </ul>
 
                                     </div>

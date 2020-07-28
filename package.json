@@ -1,13 +1,13 @@
 {
-  "name": "codewithdan",
+  "name": "doops",
   "version": "1.0.0",
-  "description": "Code with Dan site",
-  "author": "Dan Wahlin",
+  "description": "Doops website",
+  "author": "Popescu Catalin",
   "main": "server.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DanWahlin/CodeWithDanDockerServices.git"
+    "url": "https://github.com/devopsguru2020/CodeWithDanDockerServices.git"
   },
   "scripts": {
     "start": "node server.js"
